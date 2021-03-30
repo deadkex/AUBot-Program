@@ -39,3 +39,7 @@
 
 Discord screenshot:
 https://imgur.com/a/DeppfGh
+
+
+### Disclaimer
+- You are allowed to use this code if you link to this github repository.  
