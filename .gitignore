@@ -1,0 +1,18 @@
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+# Datasource local storage ignored files
+.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Custom
+AUBot-Program/exe/dist/AUBotToken.txt
+AUBot-Program/exe/versions
+AUBot-Program/exe/main.spec
+AUBot-Program/exe/main_window.spec
+AUBot-Program/AUBotToken.txt
+AUBot-Program/Stuff
+AUBot-Program/config.txt
+AUBot-Program/exe/build
+AUBot-Program/exe/shhPicture.spec
