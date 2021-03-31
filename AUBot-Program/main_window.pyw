@@ -9,7 +9,7 @@ from tkinter import *
 from tkinter import messagebox
 
 # ----------------------------------------------------------------------------------------------------------------------
-versionId = "10"
+versionId = "11"
 with open("config.txt", 'r', encoding='utf-8') as keyFile:
     key = keyFile.readline().replace("\n", "")
     url = keyFile.readline()
@@ -46,6 +46,7 @@ sess_mute_state = 0
 playercount = 0
 
 # Offsets --------------------------------------------------------------------------------------------------------------
+'''
 AmongUsClientOffset = 46580344
 GameDataOffset = 46580344
 MeetingHudOffset = 46577548
@@ -60,6 +61,22 @@ offsets_all_players = [92, 0, 36, 8]
 offsets_playercount = [92, 0, 36, 12]
 offsets_game_state = [92, 0, 108]
 offsets_region_id = [92, 0, 16, 8, 8]
+'''
+AmongUsClientOffset = 0x28A5BFC
+GameDataOffset = 0x28C1230
+MeetingHudOffset = 0x289E7F8
+GameStartManagerOffset = 0x284A514
+ServerManagerOffset = 0x284AA84
+PlayerOffset = 0x28C1230
+
+offsets_lobby_code = [92, 0, 32, 40]
+offsets_meetinghud_state_cache = [92, 0, 8]
+offsets_meetinghud_state = [92, 0, 132]
+offsets_all_players = [92, 0, 36, 8]
+offsets_playercount = [92, 0, 36, 12]
+offsets_game_state = [92, 0, 112]
+offsets_region_id = [92, 0, 16, 8, 8]
+
 
 
 # ----------------------------------------------------------------------------------------------------------------------

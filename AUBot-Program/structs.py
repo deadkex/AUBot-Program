@@ -1,7 +1,7 @@
 class PlayerInfo:
     def __init__(self, bytearr, handle):
         self.PlayerId = int.from_bytes(bytearr[8:9], byteorder='little')
-        self.PlayerNamePtr = int.from_bytes(bytearr[12:16], byteorder='little')
+        self.PlayerNamePtr = int.from_bytes(bytearr[12:20], byteorder='little')
 
         nameleng = handle.read_int(int(self.PlayerNamePtr + 0x8))
         name = handle.read_bytes(int(self.PlayerNamePtr + 0xC), nameleng << 1)
@@ -18,15 +18,15 @@ class PlayerInfo:
             pass
             # print("User with unsupported name in lobby, errors expected")
 
-        self.ColorId = int.from_bytes(bytearr[16:20], byteorder='little')
-        self.HatId = int.from_bytes(bytearr[20:24], byteorder='little')
-        self.PetId = int.from_bytes(bytearr[24:28], byteorder='little')
-        self.SkinId = int.from_bytes(bytearr[28:32], byteorder='little')
-        self.Disconnected = int.from_bytes(bytearr[32:36], byteorder='little')
-        self.Tasks = int.from_bytes(bytearr[36:40], byteorder='little')
-        self.IsImposter = int.from_bytes(bytearr[40:41], byteorder='little')
-        self.IsDead = int.from_bytes(bytearr[41:44], byteorder='little')
-        self._object = int.from_bytes(bytearr[44:48], byteorder='little')
+        self.ColorId = int.from_bytes(bytearr[20:24], byteorder='little')
+        self.HatId = int.from_bytes(bytearr[24:28], byteorder='little')
+        self.PetId = int.from_bytes(bytearr[28:32], byteorder='little')
+        self.SkinId = int.from_bytes(bytearr[32:36], byteorder='little')
+        self.Disconnected = int.from_bytes(bytearr[36:40], byteorder='little')
+        self.Tasks = int.from_bytes(bytearr[40:44], byteorder='little')
+        self.IsImposter = int.from_bytes(bytearr[44:45], byteorder='little')
+        self.IsDead = int.from_bytes(bytearr[45:48], byteorder='little')
+        self._object = int.from_bytes(bytearr[48:52], byteorder='little')
 
 
 PlayerColor = {

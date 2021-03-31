@@ -2,19 +2,19 @@ import pymem
 import win32gui
 from structs import *
 
-AmongUsClientOffset = 46580344
-GameDataOffset = 46580344
-MeetingHudOffset = 46577548
-GameStartManagerOffset = 45252408
-ServerManagerOffset = 45221608
-PlayerOffset = 46579836
+AmongUsClientOffset = 0x28A5BFC
+GameDataOffset = 0x28C1230
+MeetingHudOffset = 0x289E7F8
+GameStartManagerOffset = 0x284A514
+ServerManagerOffset = 0x284AA84
+PlayerOffset = 0x28C1230
 
 offsets_lobby_code = [92, 0, 32, 40]
 offsets_meetinghud_state_cache = [92, 0, 8]
 offsets_meetinghud_state = [92, 0, 132]
 offsets_all_players = [92, 0, 36, 8]
 offsets_playercount = [92, 0, 36, 12]
-offsets_game_state = [92, 0, 108]
+offsets_game_state = [92, 0, 112]
 offsets_region_id = [92, 0, 16, 8, 8]
 
 if not win32gui.FindWindow(0, "Among Us"):
@@ -63,18 +63,10 @@ def get_meetingHudState():  # 0 = Discussion, 1 = NotVoted, 2 = Voted, 3 = Resul
     return meetingHudState
 
 
-print("meet")
-print(get_meetingHudState())
-
-
 def get_gameState():  # 0 = NotJoined, 1 = Joined, 2 = Started, 3 = Ended (during "defeat" or "victory" screen only)
     gameState_ptr = get_ptr(AmongUsClientOffset, offsets_game_state)
     gameState = handle.read_int(int(gameState_ptr))
     return gameState
-
-
-print("state")
-print(get_gameState())
 
 
 def get_allPlayers():
@@ -124,9 +116,11 @@ def get_lobbyCode():
     return data
 
 
-# print(get_lobbyCode())
+print(get_lobbyCode())
 # print(get_gameState())
-# print(get_regionId())
+print(get_regionId())
 # print(get_meetingHudState())
-# print(get_playerCount())
-# print(get_allPlayers())
+print(get_playerCount())
+print(get_allPlayers())
+# print("meet" + str(get_meetingHudState()))
+# print("state" + str(get_gameState()))
