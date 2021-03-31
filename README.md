@@ -1,6 +1,6 @@
 # AUBot-Program
 
-#### *THIS IS THE COMPANION PROGRAM YOU NEED FOR THE AUBot! [Download the program](https://github.com/deadkex/AUBot-Program/raw/main/AUBot-Program/exe/dist/AUBot_V10.exe)*
+#### *THIS IS THE COMPANION PROGRAM WHICH YOU NEED FOR THE AUBot! [Download the program](https://github.com/deadkex/AUBot-Program/raw/main/AUBot-Program/exe/dist/AUBot_V10.exe)*
 
 ## AUBot HowTo
 1. Info
@@ -39,3 +39,7 @@
 
 Discord screenshot:
 https://imgur.com/a/DeppfGh
+
+
+### Disclaimer
+- You are allowed to use this code if you link to this github repository.  
