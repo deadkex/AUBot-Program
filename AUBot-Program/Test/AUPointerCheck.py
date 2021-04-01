@@ -2,12 +2,12 @@ import pymem
 import win32gui
 from structs import *
 
-AmongUsClientOffset = 0x28A5BFC
-GameDataOffset = 0x28C1230
-MeetingHudOffset = 0x289E7F8
-GameStartManagerOffset = 0x284A514
-ServerManagerOffset = 0x284AA84
-PlayerOffset = 0x28C1230
+AmongUsClientOffset = 0x28DFEB4
+GameDataOffset = 0x28FB4D4
+MeetingHudOffset = 0x28D8948
+GameStartManagerOffset = 0x28836F0
+ServerManagerOffset = 0x2883C58
+PlayerOffset = 0x28FB4D4
 
 offsets_lobby_code = [92, 0, 32, 40]
 offsets_meetinghud_state_cache = [92, 0, 8]
