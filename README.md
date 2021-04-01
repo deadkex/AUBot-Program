@@ -1,6 +1,6 @@
 # AUBot-Program
 
-#### *THIS IS THE COMPANION PROGRAM WHICH YOU NEED FOR THE AUBot! [Download the program](https://github.com/deadkex/AUBot-Program/raw/main/AUBot-Program/exe/dist/AUBot_V10.exe)*
+#### *THIS IS THE COMPANION PROGRAM WHICH YOU NEED FOR THE AUBot! [Download the program](https://github.com/deadkex/AUBot-Program/raw/main/AUBot-Program/exe/dist)*
 
 ## AUBot HowTo
 1. Info
@@ -17,7 +17,7 @@
 
 3. Basic steps
 - Add the bot to your server [InviteLink](https://discord.com/api/oauth2/authorize?client_id=718912328372060190&permissions=272919617&scope=bot) (or play on the main server)
-- Download the needed program [Download](https://github.com/deadkex/AUBot-Program/raw/main/AUBot-Program/exe/dist/AUBot_V10.exe)
+- Download the needed program [Download](https://github.com/deadkex/AUBot-Program/tree/main/AUBot-Program/exe/dist)
 - Join the support discord for updates and news
 - Select your role on the server to download the german/english version - *currently only english*
 
