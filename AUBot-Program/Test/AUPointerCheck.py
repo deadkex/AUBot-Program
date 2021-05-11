@@ -1,21 +1,22 @@
 import pymem
 import win32gui
 from structs import *
+from Offsets import *
 
-AmongUsClientOffset = 0x28DFEB4
-GameDataOffset = 0x28FB4D4
-MeetingHudOffset = 0x28D8948
-GameStartManagerOffset = 0x28836F0
-ServerManagerOffset = 0x2883C58
-PlayerOffset = 0x28FB4D4
+AmongUsClientOffset = all_offsets["AmongUsClientOffset"]
+GameDataOffset = all_offsets["GameDataOffset"]
+MeetingHudOffset = all_offsets["MeetingHudOffset"]
+GameStartManagerOffset = all_offsets["GameStartManagerOffset"]
+ServerManagerOffset = all_offsets["ServerManagerOffset"]
+PlayerOffset = all_offsets["AllPlayerPtrOffsets"][0]
 
-offsets_lobby_code = [92, 0, 32, 40]
-offsets_meetinghud_state_cache = [92, 0, 8]
-offsets_meetinghud_state = [92, 0, 132]
-offsets_all_players = [92, 0, 36, 8]
-offsets_playercount = [92, 0, 36, 12]
-offsets_game_state = [92, 0, 112]
-offsets_region_id = [92, 0, 16, 8, 8]
+offsets_lobby_code = all_offsets["GameCodeOffsets"][1:]
+offsets_meetinghud_state_cache = all_offsets["MeetingHudPtr"][1:] + all_offsets["MeetingHudCachePtrOffsets"]
+offsets_meetinghud_state = all_offsets["MeetingHudPtr"][1:] + all_offsets["MeetingHudStateOffsets"]
+offsets_all_players = all_offsets["AllPlayerPtrOffsets"][1:] + all_offsets["AllPlayersOffsets"]
+offsets_playercount = all_offsets["AllPlayerPtrOffsets"][1:] + all_offsets["PlayerCountOffsets"]
+offsets_game_state = all_offsets["GameStateOffsets"][1:]
+offsets_region_id = all_offsets["PlayRegionOffsets"][1:]
 
 if not win32gui.FindWindow(0, "Among Us"):
     exit()
@@ -79,7 +80,7 @@ def get_allPlayers():
     playerAddrPtr2 = ptr_calc(playerAddrPtr, [0])
     for i in range(get_playerCount()):
         bytearr = handle.read_bytes(int(playerAddrPtr2), 48)
-        allP.append(PlayerInfo(bytearr=bytearr, handle=handle))
+        allP.append(PlayerInfo(byte_arr=bytearr, handle=handle))
         playerAddrPtr += 4
         playerAddrPtr2 = ptr_calc(playerAddrPtr, [0])
     return allP
@@ -116,11 +117,11 @@ def get_lobbyCode():
     return data
 
 
-print(get_lobbyCode())
+print("Lobbycode: " + str(get_lobbyCode()))
 # print(get_gameState())
-print(get_regionId())
+print("Region: " + PlayRegion[str(get_regionId())])
 # print(get_meetingHudState())
-print(get_playerCount())
+print("Playercount: " + str(get_playerCount()))
 print(get_allPlayers())
 # print("meet" + str(get_meetingHudState()))
 # print("state" + str(get_gameState()))

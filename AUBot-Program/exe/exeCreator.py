@@ -7,8 +7,9 @@ dirname = dirname.rsplit("\\", 1)[0]
 PyInstaller.__main__.run(
     [
         "--noconfirm",
+        "--noconsole",
         "--icon=" + os.path.join(dirname, 'exe\\shhPicture.ico'),
         "--onefile",
-        os.path.join(dirname, 'main_window.pyw'),
+        os.path.join(dirname, 'main_window.py'),
     ]
 )
