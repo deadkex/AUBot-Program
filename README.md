@@ -1,4 +1,4 @@
-# AUBot-Program
+# AUBot-Program [OUTDATED AND NOT SUPPORTED ANYMORE]
 
 #### *THIS IS THE COMPANION PROGRAM WHICH YOU NEED FOR THE AUBot! [Download the program](https://github.com/deadkex/AUBot-Program/raw/main/AUBot-Program/exe/dist)*
 
